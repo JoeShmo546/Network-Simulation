@@ -11,12 +11,12 @@ public class MacAddress{
         String options = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         String MAC = "";
         Random random = new Random();
-        int optionsIndex
+        int optionsIndex;
         
         for (int i = 0; i < 12; i++){
             optionsIndex = random.nextInt(36);
             MAC += options.charAt(optionsIndex);
-            if(i % 2 == 0){
+            if((i % 2 == 1) && (i != 11)){
                 MAC += "-";
             }
         }
@@ -33,6 +33,7 @@ public class MacAddress{
         // check if randomly generated MAC Address is unique
         do {
             assignedMAC = MacAddress.generateMAC();
+            System.out.println(assignedMAC);
             
             if(takenMACs.size() != 0){
                 for (String element : takenMACs){

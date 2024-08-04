@@ -8,7 +8,7 @@ public class host {
     
     public host(String name){
         this.name = name;
-        this.mac = "AD-BC-23-45-D9-D3";// Same with MAC Address
+        this.mac = MacAddress.assignMAC(name);
         this.ipv4 = IpAddress.assignIP(name); 
     }
 

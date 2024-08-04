@@ -13,6 +13,8 @@ public class main {
         
         System.out.println(comp2.getIpv4());
         System.out.println(comp.getIpv4());
+        System.out.println(comp.getMac());
+        System.out.println(comp2.getMac());
         System.out.println(IpAddress.takenIPs);
     }
 }
