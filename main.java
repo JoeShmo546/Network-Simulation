@@ -8,8 +8,15 @@ import java.lang.*;
 public class main {
     public static void main(String[] args) {
     
-        host comp = new host();
-        System.out.println(comp.mac);
-        System.out.println(comp.ipv4);
+        host comp = new host("comp");
+        host comp2 = new host("comp2");
+        
+        System.out.println(comp2.getIpv4());
+        System.out.println(comp.getIpv4());
+
+        for (String item : IpAddress.takenIPs){
+            System.out.println(item);
+        }
+        //System.out.println(IpAddress.takenIPs);
     }
 }

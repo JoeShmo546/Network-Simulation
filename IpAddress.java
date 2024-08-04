@@ -4,12 +4,16 @@ import java.io.*;
 
 public class IpAddress{
 
+    public static ArrayList<String> takenIPs = new ArrayList<>();
+
     public static String generateIP(){
-        Random rand = new Random();
+
         int octet;
         String IP = "";
+        Random random = new Random();
+
         for (int i = 0; i < 4; i++){
-            octet = rand.nextInt(256);
+            octet = random.nextInt(256);
             IP += Integer.toString(octet);
             if(i != 3){
                 IP += ".";
@@ -20,40 +24,25 @@ public class IpAddress{
     // class assures that IP addresses cannot be identical
     public static String assignIP(String host){
 
-        ArrayList<String> takenIPs = new ArrayList<>();
-        String separator = ": ";
         String assignedIP = "";
+        String separator = ": ";
         int separatorIndex; 
         boolean isUnique = false;
         
-        /* generate an IP Address
-         * cycle through list of IP Addresses
-         * check if the generated IP Address is equal to current IP Address in the cycle
-         * if it is equal start over and generate a new IP Address 
-         * this loop is infinite
-         */
-        while (!isUnique){
+        do {
             assignedIP = IpAddress.generateIP();
 
-            if (takenIPs.size() > 0){
+            for (String currentEntry : takenIPs){
 
-                for (int i = 0; i < takenIPs.size(); i++){
-                    String currentEntry = takenIPs.get(i);
-                    separatorIndex = currentEntry.indexOf(separator);
-                    String entryIP = currentEntry.substring(separatorIndex + separator.length());
+                separatorIndex = currentEntry.indexOf(separator);
+                String entryIP = currentEntry.substring(separatorIndex + separator.length());
 
-                    if (assignedIP.equals(entryIP)){
-                        break;
-                    } else if (i == takenIPs.size()){
-                        isUnique = true;
-                        break;
-                    }
-                }
-
-            } else {
-                isUnique = true;
-            }
-        }
+                if (assignedIP.equals(entryIP)){
+                    break;
+                }                 }
+            isUnique = true;
+            
+        } while (!isUnique);
 
         String entry = host + " : " + assignedIP;
         takenIPs.add(entry);
