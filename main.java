@@ -13,10 +13,6 @@ public class main {
         
         System.out.println(comp2.getIpv4());
         System.out.println(comp.getIpv4());
-
-        for (String item : IpAddress.takenIPs){
-            System.out.println(item);
-        }
-        //System.out.println(IpAddress.takenIPs);
+        System.out.println(IpAddress.takenIPs);
     }
 }

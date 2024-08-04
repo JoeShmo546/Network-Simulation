@@ -29,6 +29,7 @@ public class IpAddress{
         int separatorIndex; 
         boolean isUnique = false;
         
+        // check if randomly generated IP Address is unique
         do {
             assignedIP = IpAddress.generateIP();
             
@@ -50,9 +51,9 @@ public class IpAddress{
             
         } while (!isUnique);
 
+        // add hostname and IP entry table
         String entry = host + " : " + assignedIP;
         takenIPs.add(entry);
-        System.out.println(takenIPs);
         return assignedIP;
     }
 }
