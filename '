@@ -38,7 +38,11 @@ public class IpAddress{
                     separatorIndex = element.indexOf(separator);
                     String entryIP = element.substring(separatorIndex + separator.length());
                     
-                    if (assignedIP.equals(entryIP)){
+                    System.out.println(assignedIP);
+                    System.out.println(entryIP);
+
+                    //if (assignedIP.equals(entryIP)){
+                    if (1 == 2){
                         break;
                     } else {
                         isUnique = true;
