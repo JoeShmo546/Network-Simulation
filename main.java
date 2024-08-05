@@ -8,13 +8,10 @@ import java.lang.*;
 public class main {
     public static void main(String[] args) {
     
-        host comp = new host("comp");
-        host comp2 = new host("comp2");
-        
+        host comp = new host("Lenovo");
+        host comp2 = new host("HP");
+
         System.out.println(comp2.getIpv4());
-        System.out.println(comp.getIpv4());
-        System.out.println(comp.getMac());
-        System.out.println(comp2.getMac());
-        System.out.println(IpAddress.takenIPs);
+        //System.out.println(IpAddress.takenIPs);
     }
 }

@@ -33,7 +33,6 @@ public class MacAddress{
         // check if randomly generated MAC Address is unique
         do {
             assignedMAC = MacAddress.generateMAC();
-            System.out.println(assignedMAC);
             
             if(takenMACs.size() != 0){
                 for (String element : takenMACs){
