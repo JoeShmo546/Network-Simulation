@@ -8,8 +8,9 @@ Simulates the process of data flow between two hosts in a network.
 1. Backend
     Devices:
     ~ host
-    ~ router
+        - Encapsulation
     ~ switch
+    ~ router
     ~ internet
     Protocols:
     ~ ARP mapping Mac to IP
