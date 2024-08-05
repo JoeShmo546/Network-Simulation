@@ -5,6 +5,8 @@ public class host {
     private String name;
     private String ipv4;
     private String mac;
+    private Arraylist<String> arpCache = new Arraylist()<>;
+    private Arraylist<String> routingTable = new Arraylist()<>;
     
     public host(String name){
         this.name = name;
